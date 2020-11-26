@@ -1,0 +1,37 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.text.*?>
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.layout.AnchorPane?>
+
+<AnchorPane minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+   <children>
+      <Label layoutX="129.0" layoutY="103.0" prefHeight="31.0" prefWidth="613.0" text="Welcome. Please log in or create an account.">
+         <font>
+            <Font size="26.0" />
+         </font>
+      </Label>
+      <TextField layoutX="282.0" layoutY="201.0" prefHeight="41.0" prefWidth="227.0" promptText="Username">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <TextField layoutX="279.0" layoutY="265.0" prefHeight="51.0" prefWidth="228.0" promptText="Password">
+         <font>
+            <Font size="22.0" />
+         </font>
+      </TextField>
+      <Button layoutX="279.0" layoutY="388.0" mnemonicParsing="false" onMouseClicked="#checkout" prefHeight="53.0" prefWidth="232.0" text="Submit">
+         <font>
+            <Font size="20.0" />
+         </font>
+      </Button>
+      <Button fx:id="newUser" layoutX="261.0" layoutY="500.0" mnemonicParsing="false" onMouseClicked="#newUserControl" prefHeight="57.0" prefWidth="287.0" text="Register New Account">
+         <font>
+            <Font size="21.0" />
+         </font>
+      </Button>
+   </children>
+</AnchorPane>
