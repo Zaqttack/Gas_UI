@@ -1,6 +1,5 @@
 package application.controller;
 
-import java.awt.TextField;
 import java.io.IOException;
 
 import javafx.event.ActionEvent;
@@ -10,63 +9,56 @@ import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
-import javafx.scene.input.MouseEvent;
+import javafx.scene.control.Label;
+import javafx.scene.control.PasswordField;
+import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
 public class MainController {
 
-	@FXML
-	private Button submit;
-	@FXML
-	private Button newUser;
-	@FXML
-	private TextField userName;
-	@FXML
-	private TextField password;
-	
-	public void handle(ActionEvent event) throws IOException
-	{
+    @FXML
+    private Button userLogin;
+    @FXML
+    private PasswordField userPassword;
+    @FXML
+    private Label updateLabel;
+    @FXML
+    private Button newUser;
+    @FXML
+    private TextField userName;
 
+	public void logUserIn(ActionEvent event)throws IOException {
+		String name = userName.getText();
+		String pass = userPassword.getText();
+		
+		if(name != null && !name.isEmpty() || pass != null && !pass.isEmpty()) {
+			if(userName.getText().equals("zaqHolland") && userPassword.getText().equals("password")) {
+			FXMLLoader checkoutLoader = new FXMLLoader();
+				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
+				
+				Parent checkoutRoot = checkoutLoader.load();
+				Scene checkoutScene = new Scene(checkoutRoot);
+				
+				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+				personnelStage.setScene(checkoutScene);
+				personnelStage.show();
+			}
+			
+		} else {
+			updateLabel.setText("Incorrect Infromation");
+		}
 	}
 	
-	@FXML
-	public void checkout(MouseEvent event)throws IOException
-	{
+	public void registerNewUser(ActionEvent event)throws IOException {
 		
+		FXMLLoader registerLoader = new FXMLLoader();
+		registerLoader.setLocation(getClass().getResource("/application/view/Newuser.fxml"));
 		
-		
-		FXMLLoader zoneLoader = new FXMLLoader();
-		zoneLoader.setLocation(getClass().getResource("/Checkout.fxml"));
-		
-		Parent zoneRoot = zoneLoader.load();
-		Scene zoneScene = new Scene(zoneRoot);
-		
-		CheckoutController zoneController = zoneLoader.getController();
-		
+		Parent registerRoot = registerLoader.load();
+		Scene registerScene = new Scene(registerRoot);
 		
 		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		personnelStage.setScene(zoneScene);
-		personnelStage.show();
-		
-	}
-	
-	@FXML
-	public void newUserControl(MouseEvent event)throws IOException
-	{
-		
-		String zoneCode = newUser.getText();
-		
-		FXMLLoader zoneLoader = new FXMLLoader();
-		zoneLoader.setLocation(getClass().getResource("/Newuser.fxml"));
-		
-		Parent zoneRoot = zoneLoader.load();
-		Scene zoneScene = new Scene(zoneRoot);
-		
-		NewUserController zoneController = zoneLoader.getController();
-		
-		
-		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		personnelStage.setScene(zoneScene);
+		personnelStage.setScene(registerScene);
 		personnelStage.show();
 		
 	}

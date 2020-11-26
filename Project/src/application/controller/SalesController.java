@@ -13,7 +13,7 @@ public class SalesController {
 	
 public void setMainScene(MouseEvent event) throws IOException{
 		
-		Parent mainRoot = FXMLLoader.load(getClass().getResource("/Login.fxml"));
+		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/Login.fxml"));
 		Scene mainScene = new Scene(mainRoot);
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);

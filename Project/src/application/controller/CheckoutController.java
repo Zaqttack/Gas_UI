@@ -26,7 +26,7 @@ public class CheckoutController {
 	
 public void setMainScene(MouseEvent event) throws IOException{
 		
-		Parent mainRoot = FXMLLoader.load(getClass().getResource("/Login.fxml"));
+		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/Login.fxml"));
 		Scene mainScene = new Scene(mainRoot);
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);
@@ -41,7 +41,7 @@ public void admin(MouseEvent event)throws IOException
 	
 	
 	FXMLLoader zoneLoader = new FXMLLoader();
-	zoneLoader.setLocation(getClass().getResource("/Administation.fxml"));
+	zoneLoader.setLocation(getClass().getResource("/application/view/Administation.fxml"));
 	
 	Parent zoneRoot = zoneLoader.load();
 	Scene zoneScene = new Scene(zoneRoot);
