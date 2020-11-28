@@ -8,36 +8,23 @@
 
 <AnchorPane minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CheckoutController">
    <children>
-      <TextArea layoutX="289.0" layoutY="207.0" prefHeight="314.0" prefWidth="437.0" />
-      <TextField layoutX="354.0" layoutY="122.0" prefHeight="47.0" prefWidth="271.0" promptText="Ex. Chips">
+      <Label layoutX="22.0" layoutY="38.0" prefHeight="26.0" prefWidth="115.0" text="Checkout">
          <font>
-            <Font size="19.0" />
+            <Font size="24.0" />
          </font>
-      </TextField>
-      <Button layoutX="677.0" layoutY="115.0" mnemonicParsing="false" prefHeight="54.0" prefWidth="99.0" text="Search" />
-      <Separator layoutX="259.0" layoutY="3.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" />
-      <ListView layoutX="8.0" layoutY="118.0" prefHeight="517.0" prefWidth="239.0" />
-      <Label layoutX="38.0" layoutY="24.0" prefHeight="26.0" prefWidth="115.0" text="Checkout:">
+      </Label>
+      <Label layoutX="22.0" layoutY="116.0" prefHeight="26.0" prefWidth="124.0" text="List of Items: ">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="6.0" layoutY="78.0" prefHeight="26.0" prefWidth="124.0" text="List of Items: ">
+      <ListView fx:id="listOfItemsView" layoutX="18.0" layoutY="144.0" prefHeight="484.0" prefWidth="230.0" />
+      <Label layoutX="84.0" layoutY="664.0" text="Tax:">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="181.0" layoutY="80.0" text="Price">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="71.0" layoutY="665.0" text="Tax:">
-         <font>
-            <Font size="18.0" />
-         </font>
-      </Label>
-      <Label layoutX="158.0" layoutY="664.0" text="9999999">
+      <Label layoutX="150.0" layoutY="664.0" text="\$0.00">
          <font>
             <Font size="18.0" />
          </font>
@@ -47,28 +34,54 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Label layoutX="152.0" layoutY="716.0" text="\$1,000,000">
+      <Label layoutX="150.0" layoutY="713.0" text="\$0.00">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <TextField layoutX="330.0" layoutY="625.0" minHeight="30.0" minWidth="180.0" promptText="Ex. XD" />
-      <Label layoutX="337.0" layoutY="567.0" text="ID #">
+      <Separator layoutX="259.0" layoutY="3.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" />
+      <Button fx:id="adminPanelButton" layoutX="511.0" layoutY="33.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="25.0" prefWidth="100.0" text="Admin">
          <font>
-            <Font size="20.0" />
+            <Font size="18.0" />
+         </font></Button>
+      <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="25.0" prefWidth="100.0" text="Log off">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <ListView fx:id="listOfItemsSearch" layoutX="290.0" layoutY="144.0" prefHeight="425.0" prefWidth="437.0" />
+      <Label layoutX="290.0" layoutY="587.0" text="ID #">
+         <font>
+            <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="577.0" layoutY="572.0" text="QTY">
+      <Label layoutX="520.0" layoutY="592.0" text="QTY">
          <font>
-            <Font size="20.0" />
+            <Font size="24.0" />
          </font>
       </Label>
-      <TextField layoutX="330.0" layoutY="675.0" minHeight="30.0" minWidth="180.0" promptText="Ex. CD" />
-      <TextField layoutX="580.0" layoutY="625.0" prefHeight="30.0" prefWidth="100.0" promptText="1" />
-      <TextField layoutX="580.0" layoutY="675.0" prefHeight="30.0" prefWidth="100.0" promptText="2" />
-      <Button layoutX="700.0" layoutY="625.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" text="Add" />
-      <Button layoutX="700.0" layoutY="675.0" minHeight="30.0" minWidth="50.0" mnemonicParsing="false" text="Remove" />
-      <Button layoutX="503.0" layoutY="738.0" mnemonicParsing="false" onMouseClicked="#admin" text="Admin" />
-      <Button layoutX="616.0" layoutY="738.0" mnemonicParsing="false" onMouseClicked="#setMainScene" text="Log off" />
+      <TextField fx:id="addID" layoutX="290.0" layoutY="645.0" minHeight="30.0" minWidth="180.0" promptText="GRC1000">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="addQuantity" layoutX="520.0" layoutY="645.0" prefHeight="30.0" prefWidth="100.0" promptText="10">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="addButton" layoutX="630.0" layoutY="645.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="100.0" text="Add">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+      <TextField fx:id="removeItem" layoutX="290.0" layoutY="695.0" minHeight="30.0" minWidth="180.0" promptText="DOM2001">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <TextField fx:id="removeQuantity" layoutX="520.0" layoutY="695.0" prefHeight="30.0" prefWidth="100.0" promptText="2">
+         <font>
+            <Font size="18.0" />
+         </font></TextField>
+      <Button fx:id="removeButton" layoutX="630.0" layoutY="695.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="25.0" prefWidth="100.0" text="Remove">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
    </children>
 </AnchorPane>
