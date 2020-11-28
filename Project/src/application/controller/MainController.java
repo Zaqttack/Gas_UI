@@ -39,6 +39,9 @@ public class MainController {
 				Parent checkoutRoot = checkoutLoader.load();
 				Scene checkoutScene = new Scene(checkoutRoot);
 				
+				CheckoutController controller = checkoutLoader.getController();
+				controller.initializeCheckout();
+				
 				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				personnelStage.setScene(checkoutScene);
 				personnelStage.show();

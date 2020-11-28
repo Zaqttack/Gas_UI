@@ -15,7 +15,23 @@ public class StoreFront {
     	this.parkName = parkName;
     }
     
-    public void LoadMerchandise(String filename) throws FileNotFoundException {
+    public String getParkName() {
+		return parkName;
+	}
+
+	public void setParkName(String parkName) {
+		this.parkName = parkName;
+	}
+
+	public List<Merchandise> getItems() {
+		return items;
+	}
+
+	public void setItems(List<Merchandise> items) {
+		this.items = items;
+	}
+
+	public void LoadMerchandise(String filename) throws FileNotFoundException {
     	for(String[] merchParts : this.readCsvFile(filename)) {
     		Merchandise m = new Merchandise(merchParts[0], merchParts[1], merchParts[2], merchParts[3]);
     		this.items.add(m);

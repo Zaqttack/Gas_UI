@@ -2,7 +2,9 @@ package application.controller;
 
 import java.io.FileNotFoundException;
 import java.io.IOException;
+import java.util.List;
 
+import application.model.Merchandise;
 import application.model.StoreFront;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -41,12 +43,23 @@ public class CheckoutController {
     @FXML
     private Button logOffButton;
     @FXML
-    private ListView<?> listOfItemsSearch;
+    private ListView<String> listOfItemsSearch;
 
 	public CheckoutController() throws FileNotFoundException {
 		s.LoadMerchandise("data/merchandise.csv");
 	}
+	
+	public void initializeCheckout() {
+		List<Merchandise> merch = s.getItems();
+		
+		String merchandiseStuff;
+		for(int i = 0; i <  merch.size(); i++) {
+			merchandiseStuff = merch.get(i).getItemName() + " - $" + merch.get(i).getPrice() + " - " + merch.get(i).getCount() + " - " + merch.get(i).getID();
+			listOfItemsSearch.getItems().add(i, merchandiseStuff);
+		}
+	}
 
+	@FXML
     void loginAdmin(ActionEvent event) throws IOException {
 		
 		FXMLLoader zoneLoader = new FXMLLoader();
@@ -61,6 +74,7 @@ public class CheckoutController {
 
     }
 
+	@FXML
     void returnToHome(ActionEvent event) throws IOException {
 		
 		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/Login.fxml"));
@@ -71,14 +85,17 @@ public class CheckoutController {
 
     }
 
+	@FXML
     void searchItem(ActionEvent event) {
 
     }
 
+	@FXML
     void addItem(ActionEvent event) {
 
     }
 
+	@FXML
     void removeItem(ActionEvent event) {
 
     }
