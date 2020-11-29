@@ -28,19 +28,11 @@ public class CheckoutController {
 	double totalTotal;
 
     @FXML
-    private TextField removeItem;
-    @FXML
-    private TextField removeQuantity;
-    @FXML
-    private Button searchButton;
-    @FXML
     private ListView<String> listOfItemsView;
     @FXML
     private Label taxLabel;
     @FXML
     private Label totalLabel;
-    @FXML
-    private Button removeButton;
     @FXML
     private Button adminPanelButton;
     @FXML
@@ -49,8 +41,6 @@ public class CheckoutController {
     private TextField addQuantity;
     @FXML
     private Button addButton;
-    @FXML
-    private TextField searchTextField;
     @FXML
     private Button logOffButton;
     @FXML
@@ -159,10 +149,5 @@ public class CheckoutController {
 				break;
 			}
 		}
-    }
-
-	@FXML
-    void removeItem(ActionEvent event) {
-
     }
 }

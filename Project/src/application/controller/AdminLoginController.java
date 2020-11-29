@@ -39,10 +39,13 @@ public class AdminLoginController {
 		if(name != null && !name.isEmpty() || pass != null && !pass.isEmpty()) {
 			if(userName.getText().equals("admin") && userPassword.getText().equals("password123")) {
 			FXMLLoader checkoutLoader = new FXMLLoader();
-				checkoutLoader.setLocation(getClass().getResource("/application/view/Administation.fxml"));
+				checkoutLoader.setLocation(getClass().getResource("/application/view/Administration.fxml"));
 				
 				Parent checkoutRoot = checkoutLoader.load();
 				Scene checkoutScene = new Scene(checkoutRoot);
+				
+				AdministrationController controller = checkoutLoader.getController();
+				controller.initializeAdministration();
 				
 				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 				personnelStage.setScene(checkoutScene);

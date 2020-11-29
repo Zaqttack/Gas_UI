@@ -9,20 +9,20 @@ import java.util.List;
 import java.util.Scanner;
 
 public class StoreFront {
-	private String parkName;
+	private String storeName;
 	private String merchandiseFilename;
     private List<Merchandise> items = new ArrayList<Merchandise>();
     
-    public StoreFront(String parkName) {
-    	this.parkName = parkName;
+    public StoreFront(String storeName) {
+    	this.storeName = storeName;
     }
     
-    public String getParkName() {
-		return parkName;
+    public String getStoreName() {
+		return storeName;
 	}
 
-	public void setParkName(String parkName) {
-		this.parkName = parkName;
+	public void setStoreName(String storeName) {
+		this.storeName = storeName;
 	}
 
 	public List<Merchandise> getItems() {
@@ -65,6 +65,10 @@ public class StoreFront {
     public void removeItem(Merchandise m) {
 		items.remove(m);
 	}
+    
+    public void addItem(Merchandise m) {
+    	items.add(m);
+    }
 
 	public void save() throws FileNotFoundException {
 		File file = new File(merchandiseFilename);

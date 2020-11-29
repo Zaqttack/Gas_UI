@@ -18,7 +18,7 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="listOfItemsView" layoutX="18.0" layoutY="144.0" prefHeight="484.0" prefWidth="230.0" />
+      <ListView fx:id="listOfItemsView" layoutX="18.0" layoutY="144.0" prefHeight="485.0" prefWidth="230.0" />
       <Label layoutX="84.0" layoutY="654.0" text="Tax:">
          <font>
             <Font size="18.0" />
@@ -48,38 +48,26 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <ListView fx:id="listOfItemsSearch" layoutX="290.0" layoutY="144.0" prefHeight="425.0" prefWidth="437.0" />
-      <Label layoutX="290.0" layoutY="612.0" text="ID #">
+      <ListView fx:id="listOfItemsSearch" layoutX="290.0" layoutY="144.0" prefHeight="485.0" prefWidth="437.0" />
+      <Label layoutX="290.0" layoutY="662.0" text="ID #">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="612.0" text="QTY">
+      <Label layoutX="520.0" layoutY="662.0" text="QTY">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <TextField fx:id="addID" layoutX="290.0" layoutY="645.0" minHeight="30.0" minWidth="180.0" promptText="GRC1000">
+      <TextField fx:id="addID" layoutX="290.0" layoutY="695.0" minHeight="30.0" minWidth="180.0" promptText="GRC1000">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <TextField fx:id="addQuantity" layoutX="520.0" layoutY="645.0" prefHeight="30.0" prefWidth="100.0" promptText="10">
+      <TextField fx:id="addQuantity" layoutX="520.0" layoutY="695.0" prefHeight="30.0" prefWidth="100.0" promptText="10">
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button fx:id="addButton" layoutX="630.0" layoutY="645.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="100.0" text="Add">
-         <font>
-            <Font size="18.0" />
-         </font></Button>
-      <TextField fx:id="removeItem" layoutX="290.0" layoutY="695.0" minHeight="30.0" minWidth="180.0" promptText="DOM2001">
-         <font>
-            <Font size="18.0" />
-         </font></TextField>
-      <TextField fx:id="removeQuantity" layoutX="520.0" layoutY="695.0" prefHeight="30.0" prefWidth="100.0" promptText="2">
-         <font>
-            <Font size="18.0" />
-         </font></TextField>
-      <Button fx:id="removeButton" layoutX="630.0" layoutY="695.0" mnemonicParsing="false" onAction="#removeItem" prefHeight="25.0" prefWidth="100.0" text="Remove">
+      <Button fx:id="addButton" layoutX="630.0" layoutY="695.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="100.0" text="Add">
          <font>
             <Font size="18.0" />
          </font></Button>
