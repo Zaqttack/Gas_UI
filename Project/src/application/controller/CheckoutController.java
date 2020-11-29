@@ -13,6 +13,8 @@ import javafx.fxml.FXMLLoader;
 import javafx.scene.Node;
 import javafx.scene.Parent;
 import javafx.scene.Scene;
+import javafx.scene.control.Alert;
+import javafx.scene.control.Alert.AlertType;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
@@ -28,6 +30,7 @@ public class CheckoutController {
 	double cost;
 	double totalTax;
 	double totalTotal;
+	Alert alert = new Alert(AlertType.NONE);
 
     @FXML
     private ListView<String> listOfItemsView;
@@ -156,24 +159,18 @@ public class CheckoutController {
     }
 	
     @FXML
-    void completeTransaction(ActionEvent event) throws IOException {
-
-    	FXMLLoader checkoutLoader = new FXMLLoader();
-		checkoutLoader.setLocation(getClass().getResource("/application/view/Transaction.fxml"));
+    void completeTransaction(ActionEvent event) throws InterruptedException {
+    	
+    	alert.setAlertType(AlertType.INFORMATION);
+    	alert.setTitle("CHECKOUT");
+    	alert.setHeaderText("COMPLETING CHECKOUT");
+    	alert.setContentText("To complete checkout click OK");
+    	alert.setResizable(false);
+    	alert.show();
 		
-		Parent checkoutRoot = checkoutLoader.load();
-		Scene checkoutScene = new Scene(checkoutRoot, 400, 200);
-		
-		TransactionController controller = checkoutLoader.getController();
-		controller.initializeTransaction();
-
-//		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		Stage personnelStage = new Stage();
-		personnelStage.setScene(checkoutScene);
-		personnelStage.show();
-		
-		PauseTransition delay = new PauseTransition(Duration.seconds(5));
-		delay.setOnFinished(checkoutRoot->personnelStage.close());
-		delay.play();
+    	Thread.sleep(1000);
+    	listOfItemsView.getItems().clear();
+    	listOfItemsSearch.getItems().clear();
+    	initializeCheckout();
     }
 }
