@@ -2,6 +2,7 @@ package application.model;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.io.PrintWriter;
 import java.util.ArrayList;
 import java.util.LinkedList;
 import java.util.List;
@@ -9,6 +10,7 @@ import java.util.Scanner;
 
 public class StoreFront {
 	private String parkName;
+	private String merchandiseFilename;
     private List<Merchandise> items = new ArrayList<Merchandise>();
     
     public StoreFront(String parkName) {
@@ -32,6 +34,8 @@ public class StoreFront {
 	}
 
 	public void LoadMerchandise(String filename) throws FileNotFoundException {
+		this.merchandiseFilename = filename;
+		
     	for(String[] merchParts : this.readCsvFile(filename)) {
     		Merchandise m = new Merchandise(merchParts[0], merchParts[1], merchParts[2], merchParts[3]);
     		this.items.add(m);
@@ -47,9 +51,7 @@ public class StoreFront {
     private List<String[]> readCsvFile(String filename) throws FileNotFoundException {
     	File file = new File(filename);
     	
-    	//let try with resources handling closing the scanner for us - best practice
-    	try(Scanner scan = new Scanner(file)) 
-    	{
+    	try(Scanner scan = new Scanner(file)) {
 	    	List<String[]> lines = new LinkedList<>();
 	    	
 	    	while(scan.hasNext()) {
@@ -59,4 +61,18 @@ public class StoreFront {
 	    	return lines;
     	}
     }
+    
+    public void removeItem(Merchandise m) {
+		items.remove(m);
+	}
+
+	public void save() throws FileNotFoundException {
+		File file = new File(merchandiseFilename);
+		
+    	try(PrintWriter output = new PrintWriter(file)) {
+    		for(Merchandise m : items) {
+    			output.println(m.getCsvString());
+    		}
+    	}
+	}
 }

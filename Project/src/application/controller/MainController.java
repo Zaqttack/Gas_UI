@@ -33,7 +33,7 @@ public class MainController {
 		
 		if(name != null && !name.isEmpty() || pass != null && !pass.isEmpty()) {
 			if(userName.getText().equals("zaqHolland") && userPassword.getText().equals("password")) {
-			FXMLLoader checkoutLoader = new FXMLLoader();
+				FXMLLoader checkoutLoader = new FXMLLoader();
 				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
 				
 				Parent checkoutRoot = checkoutLoader.load();

@@ -59,12 +59,19 @@ public class AdminLogin {
 
     @FXML
     void returnToCheckout(ActionEvent event) throws IOException {
+    	
+		FXMLLoader checkoutLoader = new FXMLLoader();
+		checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
 		
-		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/Checkout.fxml"));
-		Scene mainScene = new Scene(mainRoot);
-		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-		mainStage.setScene(mainScene);
-		mainStage.show();
+		Parent checkoutRoot = checkoutLoader.load();
+		Scene checkoutScene = new Scene(checkoutRoot);
+		
+		CheckoutController controller = checkoutLoader.getController();
+		controller.initializeCheckout();
+		
+		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		personnelStage.setScene(checkoutScene);
+		personnelStage.show();
 
     }
 

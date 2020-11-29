@@ -37,6 +37,10 @@ public class Merchandise {
 	public void setCount(String count) {
 		this.count = count;
 	}
+	
+	public String getCsvString() {
+		return String.format("%s,%s,%s,%s", itemName, price, ID, count);
+	}
 
 	public Merchandise(String itemName, String price, String ID, String count) {
 		this.itemName = itemName;
