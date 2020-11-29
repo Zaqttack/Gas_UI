@@ -10,32 +10,22 @@
    <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="800.0">
          <children>
+            <Label layoutX="313.0" layoutY="39.0" prefHeight="24.0" prefWidth="165.0" text="ADMIN INVENTORY">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToAdminLogin" prefHeight="25.0" prefWidth="100.0" text="Log off">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Button>
             <Label layoutX="22.0" layoutY="156.0" text="Daily sales">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="190.0" text="Profits">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="50.0" layoutY="215.0" text="Taxes">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="22.0" layoutY="290.0" text="Weekly Sales">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="50.0" layoutY="323.0" text="Profits">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="50.0" layoutY="348.0" text="Taxes">
+            <Label layoutX="50.0" layoutY="190.0" text="Sales">
                <font>
                   <Font size="18.0" />
                </font>
@@ -45,7 +35,22 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label layoutX="50.0" layoutY="215.0" text="Taxes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <Label fx:id="dailyTaxesLabel" layoutX="200.0" layoutY="215.0" text="Label">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="22.0" layoutY="290.0" text="Weekly Sales">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
+            <Label layoutX="50.0" layoutY="323.0" text="Sales">
                <font>
                   <Font size="18.0" />
                </font>
@@ -55,17 +60,17 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label layoutX="50.0" layoutY="348.0" text="Taxes">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <Label fx:id="weeklyTaxesLabel" layoutX="200.0" layoutY="348.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="595.0" text="Total Inventory">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Label layoutX="22.0" layoutY="645.0" text="Total Profits">
+            <Label layoutX="22.0" layoutY="595.0" text="Total Items">
                <font>
                   <Font size="18.0" />
                </font>
@@ -75,38 +80,48 @@
                   <Font size="18.0" />
                </font>
             </Label>
+            <Label layoutX="22.0" layoutY="645.0" text="Total Sales">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Label>
             <Label fx:id="totalProfitsLabel" layoutX="200.0" layoutY="645.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="313.0" layoutY="39.0" prefHeight="24.0" prefWidth="165.0" text="ADMIN INVENTORY">
+            <Label fx:id="boughtLabel" layoutX="290.0" layoutY="763.0" text=" ">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
             <ListView fx:id="productListView" layoutX="290.0" layoutY="142.0" prefHeight="475.0" prefWidth="437.0" />
-            <Button fx:id="buyButton" layoutX="630.0" layoutY="675.0" mnemonicParsing="false" onAction="#buyItem" prefHeight="100.0" prefWidth="100.0" text="Add">
+            <Label layoutX="520.0" layoutY="622.0" text="QTY">
                <font>
-                  <Font size="18.0" />
+                  <Font size="24.0" />
                </font>
-            </Button>
-            <TextField fx:id="buyQuantity" layoutX="520.0" layoutY="675.0" prefHeight="30.0" prefWidth="100.0" promptText="10">
+            </Label>
+            <Label layoutX="290.0" layoutY="622.0" text="ID #">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+            <TextField fx:id="buyID" layoutX="290.0" layoutY="655.0" minHeight="30.0" minWidth="180.0" promptText="GRC1000">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <TextField fx:id="buyID" layoutX="290.0" layoutY="675.0" minHeight="30.0" minWidth="180.0" promptText="GRC1000">
+            <TextField fx:id="buyQuantity" layoutX="520.0" layoutY="655.0" prefHeight="30.0" prefWidth="100.0" promptText="10">
                <font>
                   <Font size="18.0" />
                </font>
             </TextField>
-            <Label layoutX="290.0" layoutY="721.0" text="Markup">
+            <Label layoutX="290.0" layoutY="701.0" text="Markup">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <RadioButton fx:id="radioButton25" layoutX="290.0" layoutY="742.0" mnemonicParsing="false" selected="true" text="25%">
+            <RadioButton fx:id="radioButton25" layoutX="290.0" layoutY="722.0" mnemonicParsing="false" selected="true" text="25%">
                <font>
                   <Font size="18.0" />
                </font>
@@ -114,32 +129,17 @@
                   <ToggleGroup fx:id="markupPercent" />
                </toggleGroup>
             </RadioButton>
-            <RadioButton fx:id="radioButton75" layoutX="520.0" layoutY="742.0" mnemonicParsing="false" text="75%" toggleGroup="$markupPercent">
+            <RadioButton fx:id="radioButton75" layoutX="520.0" layoutY="722.0" mnemonicParsing="false" text="75%" toggleGroup="$markupPercent">
                <font>
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <RadioButton fx:id="radioButton50" layoutX="410.0" layoutY="742.0" mnemonicParsing="false" text="50%" toggleGroup="$markupPercent">
+            <RadioButton fx:id="radioButton50" layoutX="410.0" layoutY="722.0" mnemonicParsing="false" text="50%" toggleGroup="$markupPercent">
                <font>
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <Label layoutX="520.0" layoutY="642.0" text="QTY">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label layoutX="290.0" layoutY="642.0" text="ID #">
-               <font>
-                  <Font size="24.0" />
-               </font>
-            </Label>
-            <Label fx:id="boughtLabel" layoutX="22.0" layoutY="741.0">
-               <font>
-                  <Font size="18.0" />
-               </font>
-            </Label>
-            <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToAdminLogin" prefHeight="25.0" prefWidth="100.0" text="Log off">
+            <Button fx:id="buyButton" layoutX="630.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyItem" prefHeight="100.0" prefWidth="100.0" text="Add">
                <font>
                   <Font size="18.0" />
                </font>

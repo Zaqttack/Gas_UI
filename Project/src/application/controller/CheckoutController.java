@@ -6,6 +6,7 @@ import java.util.List;
 
 import application.model.Merchandise;
 import application.model.StoreFront;
+import javafx.animation.PauseTransition;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -17,6 +18,7 @@ import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
+import javafx.util.Duration;
 
 public class CheckoutController {
 	public StoreFront s = new StoreFront("Gas_UI");
@@ -45,6 +47,8 @@ public class CheckoutController {
     private Button logOffButton;
     @FXML
     private ListView<String> listOfItemsSearch;
+    @FXML
+    private Button completeButton;
 
 	public CheckoutController() throws FileNotFoundException {
 		s.LoadMerchandise("data/merchandise.csv");
@@ -149,5 +153,27 @@ public class CheckoutController {
 				break;
 			}
 		}
+    }
+	
+    @FXML
+    void completeTransaction(ActionEvent event) throws IOException {
+
+    	FXMLLoader checkoutLoader = new FXMLLoader();
+		checkoutLoader.setLocation(getClass().getResource("/application/view/Transaction.fxml"));
+		
+		Parent checkoutRoot = checkoutLoader.load();
+		Scene checkoutScene = new Scene(checkoutRoot, 400, 200);
+		
+		TransactionController controller = checkoutLoader.getController();
+		controller.initializeTransaction();
+
+//		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		Stage personnelStage = new Stage();
+		personnelStage.setScene(checkoutScene);
+		personnelStage.show();
+		
+		PauseTransition delay = new PauseTransition(Duration.seconds(5));
+		delay.setOnFinished(checkoutRoot->personnelStage.close());
+		delay.play();
     }
 }

@@ -26,27 +26,29 @@ public class AdministrationController {
 	public AdminFront a = new AdminFront("AminOrigin");
 	public StoreFront s = new StoreFront("Gas_UI");
 	List<Products> product = a.getItems();
-	
+	List<Merchandise> merch = s.getItems();
+	int totalItems;
+
+    @FXML
+    private Button logoffButton;
+    @FXML
+    private Label dailyProfitsLabel;
+    @FXML
+    private Label dailyTaxesLabel;
+    @FXML
+    private Label weeklyProfitsLabel;
+    @FXML
+    private Label weeklyTaxesLabel;
 	@FXML
     private Label totalInventoryLabel;
     @FXML
-    private Label dailyProfitsLabel;
+    private Label totalProfitsLabel;
     @FXML
     private ListView<String> productListView;
     @FXML
     private TextField buyQuantity;
     @FXML
-    private Label weeklyTaxesLabel;
-    @FXML
-    private Label weeklyProfitsLabel;
-    @FXML
-    private Button logoffButton;
-    @FXML
-    private Label totalProfitsLabel;
-    @FXML
     private TextField buyID;
-    @FXML
-    private Label dailyTaxesLabel;
     @FXML
     private RadioButton radioButton25;
     @FXML
@@ -57,8 +59,8 @@ public class AdministrationController {
     private ToggleGroup markupPercent;
     @FXML
     private Button buyButton;
-//    @FXML
-//    private Button boughtLabel;
+    @FXML
+    private Label boughtLabel;
 
 	public AdministrationController() throws FileNotFoundException {
 		a.LoadProducts("data/products.csv");
@@ -66,9 +68,16 @@ public class AdministrationController {
 	}
     
     public void initializeAdministration() {
+    	int i = 0;
+    	totalItems = 0;
+    	
+    	for(i = 0; i < merch.size(); i++) {
+    		totalItems += Integer.parseInt(merch.get(i).getCount());
+    	}
+    	totalInventoryLabel.setText(String.valueOf(totalItems));
 		
 		String productStuff;
-		for(int i = 0; i <  product.size(); i++) {
+		for(i = 0; i <  product.size(); i++) {
 			productStuff = product.get(i).getProductName() + " - $" + product.get(i).getProductPrice() + " - " + product.get(i).getProductID();
 			productListView.getItems().add(i, productStuff);
 		}
@@ -113,8 +122,7 @@ public class AdministrationController {
             			price = String.format("%.2f", value);
                 	}
             		m = new Merchandise(product.get(i).getProductName(), price, product.get(i).getProductID(), quantity);
-            		
-//            		boughtLabel.setText("Successfully purchased " + quantity + " of " + product.get(i).getProductName());
+            		boughtLabel.setText("Successfuly purchased " + quantity + " " + product.get(i).getProductName() + "'s");
             		break;
         		}
     		}
@@ -126,4 +134,5 @@ public class AdministrationController {
     	buyID.clear();
     	buyQuantity.clear();
     }
+    
 }
