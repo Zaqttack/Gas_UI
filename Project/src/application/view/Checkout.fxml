@@ -49,12 +49,12 @@
             <Font size="18.0" />
          </font></Button>
       <ListView fx:id="listOfItemsSearch" layoutX="290.0" layoutY="144.0" prefHeight="425.0" prefWidth="437.0" />
-      <Label layoutX="290.0" layoutY="587.0" text="ID #">
+      <Label layoutX="290.0" layoutY="612.0" text="ID #">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="520.0" layoutY="592.0" text="QTY">
+      <Label layoutX="520.0" layoutY="612.0" text="QTY">
          <font>
             <Font size="24.0" />
          </font>

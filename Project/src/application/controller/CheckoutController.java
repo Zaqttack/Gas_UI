@@ -93,7 +93,6 @@ public class CheckoutController {
 		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		personnelStage.setScene(zoneScene);
 		personnelStage.show();
-
     }
 
 	@FXML
@@ -104,7 +103,6 @@ public class CheckoutController {
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);
 		mainStage.show();
-
     }
 
 	@FXML
@@ -149,8 +147,8 @@ public class CheckoutController {
 				price = String.format("%.2f", totalTotal);
 				totalLabel.setText("$" + price);
 
-				// need to subtract quantity from merchandise.csv
-				price = String.format("%s", maxCount - iQuantity);
+				// subtract quantity from merchandise.csv
+				price = String.format("%s", (int)maxCount - (int)iQuantity);
 				merch.get(i).setCount(price);
 				if( (maxCount - iQuantity) <= 0)
 					s.removeItem(merch.get(i));

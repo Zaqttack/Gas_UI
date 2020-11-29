@@ -14,7 +14,7 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
-public class AdminLogin {
+public class AdminLoginController {
 
     @FXML
     private Button userLogin;
