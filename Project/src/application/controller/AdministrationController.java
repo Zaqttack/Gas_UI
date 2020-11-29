@@ -7,6 +7,7 @@ import java.util.List;
 import application.model.AdminFront;
 import application.model.Merchandise;
 import application.model.Products;
+import application.model.Sales;
 import application.model.StoreFront;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
@@ -23,10 +24,12 @@ import javafx.scene.control.ToggleGroup;
 import javafx.stage.Stage;
 
 public class AdministrationController {
-	public AdminFront a = new AdminFront("AminOrigin");
-	public StoreFront s = new StoreFront("Gas_UI");
-	List<Products> product = a.getItems();
-	List<Merchandise> merch = s.getItems();
+	public AdminFront admin = new AdminFront("AminOrigin");
+	public StoreFront store = new StoreFront("Gas_UI");
+	List<Products> product = admin.getItems();
+	List<Sales> sales = admin.getSales();
+	List<Merchandise> merch = store.getItems();
+	Double totalSales = 0.0;
 	int totalItems;
 
     @FXML
@@ -63,13 +66,25 @@ public class AdministrationController {
     private Label boughtLabel;
 
 	public AdministrationController() throws FileNotFoundException {
-		a.LoadProducts("data/products.csv");
-		s.LoadMerchandise("data/merchandise.csv");
+		admin.LoadProducts("data/products.csv");
+		admin.LoadSales("data/sales.csv");
+		store.LoadMerchandise("data/merchandise.csv");
 	}
     
     public void initializeAdministration() {
     	int i = 0;
     	totalItems = 0;
+    	
+    	totalSales += Double.parseDouble(sales.get(0).getDailySales());
+    	totalSales += Double.parseDouble(sales.get(0).getDailyTaxes());
+    	totalSales += Double.parseDouble(sales.get(0).getWeeklySales());
+    	totalSales += Double.parseDouble(sales.get(0).getWeeklyTaxes());
+
+    	dailyProfitsLabel.setText("$" + sales.get(0).getDailySales());
+    	dailyTaxesLabel.setText("$" + sales.get(0).getDailyTaxes());
+    	weeklyProfitsLabel.setText("$" + sales.get(0).getWeeklySales());
+    	weeklyTaxesLabel.setText("$" + sales.get(0).getWeeklyTaxes());
+    	totalProfitsLabel.setText("$" + String.valueOf(totalSales));
     	
     	for(i = 0; i < merch.size(); i++) {
     		totalItems += Integer.parseInt(merch.get(i).getCount());
@@ -126,8 +141,8 @@ public class AdministrationController {
             		break;
         		}
     		}
-	    	s.addItem(m);
-	    	s.save();
+	    	store.addItem(m);
+	    	store.save();
     	}
     	
     	radioButton25.setSelected(true);

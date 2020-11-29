@@ -169,6 +169,8 @@ public class CheckoutController {
     	alert.show();
 		
     	Thread.sleep(1000);
+    	taxLabel.setText("$0.00");
+    	totalLabel.setText("$0.00");
     	listOfItemsView.getItems().clear();
     	listOfItemsSearch.getItems().clear();
     	initializeCheckout();

@@ -11,7 +11,9 @@ import java.util.Scanner;
 public class AdminFront {
 	private String adminOrig;
 	private String productsFilename;
+	private String salesFilename;
     private List<Products> items = new ArrayList<Products>();
+    private List<Sales> sales = new ArrayList<Sales>();
     
     public AdminFront(String name) {
     	this.adminOrig = name;
@@ -36,12 +38,37 @@ public class AdminFront {
 		this.items = items;
 	}
 
+	public String getSalesFilename() {
+		return salesFilename;
+	}
+
+	public void setSalesFilename(String salesFilename) {
+		this.salesFilename = salesFilename;
+	}
+
+	public List<Sales> getSales() {
+		return sales;
+	}
+
+	public void setSales(List<Sales> sales) {
+		this.sales = sales;
+	}
+
 	public void LoadProducts(String filename) throws FileNotFoundException {
 		this.productsFilename = filename;
 		
     	for(String[] productParts : this.readCsvFile(filename)) {
     		Products p = new Products(productParts[0], productParts[1], productParts[2]);
     		this.items.add(p);
+    	}
+    }
+
+	public void LoadSales(String filename) throws FileNotFoundException {
+		this.salesFilename = filename;
+		
+    	for(String[] saleParts : this.readCsvFile(filename)) {
+    		Sales s = new Sales(saleParts[0], saleParts[1], saleParts[2], saleParts[3]);
+    		this.sales.add(s);
     	}
     }
     
