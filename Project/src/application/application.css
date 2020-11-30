@@ -13,12 +13,12 @@
     -fx-background-color: #f7941d;
     -fx-effect: dropshadow( one-pass-box , black , 20 , 0.0 , 4 , 0 );
 }
+
 .label{
 	-fx-text-fill: white;
 	-fx-font-family: "Serif";
 	-fx-effect: dropshadow( one-pass-box , black , 5 , 0.0 , 1 , 0 );
 }
-
 
 .text-field{
 	-fx-text-fill: white;
@@ -26,11 +26,21 @@
  	-fx-background-color: #12a89d;
 }
 
+.list-cell{
+	-fx-control-inner-background: #12a89d;
+}
+
 .list-view{
-	-fx-text-fill: white;
 	-fx-background-color: #12a89d;
 	-fx-effect: dropshadow( one-pass-box , black , 20 , 0.0 , 4 , 0 );
 }
+
+.raido-button .radio{
+	-fx-background-color:#f7941d;
+	-fx-background-insets:0;
+	
+}
+
 #title-text{
 	-fx-text-fill: white;
 	-fx-font-family: "Serif";

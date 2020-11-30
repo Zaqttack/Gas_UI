@@ -10,7 +10,7 @@
    <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="800.0">
          <children>
-            <Label layoutX="313.0" layoutY="39.0" prefHeight="24.0" prefWidth="165.0" styleClass="title-text" text="ADMIN INVENTORY">
+            <Label layoutX="268.0" layoutY="39.0" prefHeight="27.0" prefWidth="210.0" styleClass="title-text" text="ADMIN INVENTORY">
                <font>
                   <Font size="18.0" />
                </font>
@@ -20,72 +20,72 @@
                   <Font size="18.0" />
                </font>
             </Button>
-            <Label layoutX="22.0" layoutY="156.0" text="Daily sales">
+            <Label layoutX="26.0" layoutY="414.0" text="Daily sales">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="190.0" text="Sales">
+            <Label layoutX="54.0" layoutY="448.0" text="Sales">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="dailyProfitsLabel" layoutX="180.0" layoutY="190.0" text="Label">
+            <Label fx:id="dailyProfitsLabel" layoutX="184.0" layoutY="448.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="215.0" text="Taxes">
+            <Label layoutX="54.0" layoutY="473.0" text="Taxes">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="dailyTaxesLabel" layoutX="180.0" layoutY="215.0" text="Label">
+            <Label fx:id="dailyTaxesLabel" layoutX="184.0" layoutY="473.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="290.0" text="Weekly Sales">
+            <Label layoutX="26.0" layoutY="548.0" text="Weekly Sales">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="323.0" text="Sales">
+            <Label layoutX="54.0" layoutY="581.0" text="Sales">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weeklyProfitsLabel" layoutX="180.0" layoutY="323.0" text="Label">
+            <Label fx:id="weeklyProfitsLabel" layoutX="184.0" layoutY="581.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="50.0" layoutY="348.0" text="Taxes">
+            <Label layoutX="54.0" layoutY="606.0" text="Taxes">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="weeklyTaxesLabel" layoutX="180.0" layoutY="348.0" text="Label">
+            <Label fx:id="weeklyTaxesLabel" layoutX="184.0" layoutY="606.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="595.0" text="Total Items">
+            <Label layoutX="26.0" layoutY="672.0" text="Total Items">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="totalInventoryLabel" layoutX="180.0" layoutY="596.0" text="Label">
+            <Label fx:id="totalInventoryLabel" layoutX="184.0" layoutY="673.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label layoutX="22.0" layoutY="645.0" text="Est. Monthly Sales">
+            <Label layoutX="26.0" layoutY="722.0" text="Est. Monthly Sales">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Label fx:id="totalProfitsLabel" layoutX="180.0" layoutY="645.0" text="Label">
+            <Label fx:id="totalProfitsLabel" layoutX="184.0" layoutY="722.0" text="Label">
                <font>
                   <Font size="18.0" />
                </font>
