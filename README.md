@@ -1,12 +1,15 @@
-# Gas_UI
+# Gas_UI :high_brightness:
 Fall 2020 Applications Programming Group Project
 
-# Logins
+# Logins :computer:
 
-User Logins:
-	Username - zaqHolland
-	Password - password
-	
-Admin Logins:
-	Username - admin
-	Password - password123
+### User Logins
+Usernames | Passwords
+----------|-----------
+zaqHolland | password
+jonny50 | !L3tsg0^.^
+
+### Admin Logins
+Username | Password
+---------|---------
+admin | password123
