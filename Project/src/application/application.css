@@ -1,1 +1,38 @@
 /* JavaFX CSS - Leave this comment until you have at least create one rule which uses -fx-Property */
+.root{
+    -fx-background-image: url("./view/backgroundimagefinal.jpg");
+    -fx-background-repeat:no-repeat;
+    -fx-background-position:center;
+    -fx-background-size: 100% 100%; 
+}
+
+.button {
+	-fx-text-fill: white;
+    -fx-font-family: "Serif";
+    -fx-padding: 10;
+    -fx-background-color: #f7941d;
+    -fx-effect: dropshadow( one-pass-box , black , 20 , 0.0 , 4 , 0 );
+}
+.label{
+	-fx-text-fill: white;
+	-fx-font-family: "Serif";
+	-fx-effect: dropshadow( one-pass-box , black , 5 , 0.0 , 1 , 0 );
+}
+
+
+.text-field{
+	-fx-text-fill: white;
+ 	-fx-effect: dropshadow( one-pass-box , black , 20 , 0.0 , 4 , 0 );
+ 	-fx-background-color: #12a89d;
+}
+
+.list-view{
+	-fx-text-fill: white;
+	-fx-background-color: #12a89d;
+	-fx-effect: dropshadow( one-pass-box , black , 20 , 0.0 , 4 , 0 );
+}
+#title-text{
+	-fx-text-fill: white;
+	-fx-font-family: "Serif";
+	-fx-effect: dropshadow( one-pass-box , black , 10, 0.0 ,5 , 0 );
+}

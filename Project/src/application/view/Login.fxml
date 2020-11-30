@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
+<AnchorPane id="background" minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.MainController">
    <children>
-      <Label layoutX="261.0" layoutY="153.0" prefHeight="40.0" prefWidth="281.0" text="Welcome to Gas_UI" textAlignment="CENTER">
+      <Label layoutX="261.0" layoutY="153.0" prefHeight="40.0" prefWidth="281.0" styleClass="title-text" text="Welcome to Gas_UI" textAlignment="CENTER">
          <font>
             <Font size="32.0" />
          </font>
       </Label>
-      <TextField fx:id="userName" layoutX="287.0" layoutY="311.0" prefHeight="41.0" prefWidth="227.0" promptText="username">
+      <TextField fx:id="userName" layoutX="287.0" layoutY="311.0" prefHeight="41.0" prefWidth="227.0" promptText="username" styleClass="textfield">
          <font>
             <Font size="18.0" />
          </font>
       </TextField>
-      <PasswordField fx:id="userPassword" layoutX="286.0" layoutY="375.0" prefHeight="41.0" prefWidth="228.0" promptText="password">
+      <PasswordField fx:id="userPassword" layoutX="286.0" layoutY="375.0" prefHeight="41.0" prefWidth="228.0" promptText="password" styleClass="text-field">
          <font>
             <Font size="18.0" />
          </font>
@@ -28,12 +28,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="userLogin" layoutX="301.0" layoutY="493.0" mnemonicParsing="false" onAction="#logUserIn" prefHeight="25.0" prefWidth="200.0" text="Login">
+      <Button fx:id="userLogin" layoutX="301.0" layoutY="493.0" mnemonicParsing="false" onAction="#logUserIn" prefHeight="25.0" prefWidth="200.0" styleClass=".custom-button" text="Login">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="newUser" layoutX="300.0" layoutY="549.0" mnemonicParsing="false" onAction="#registerNewUser" prefHeight="25.0" prefWidth="200.0" text="Register">
+      <Button fx:id="newUser" layoutX="300.0" layoutY="549.0" mnemonicParsing="false" onAction="#registerNewUser" prefHeight="25.0" prefWidth="200.0" styleClass=".custom-button" text="Register">
          <font>
             <Font size="21.0" />
          </font>

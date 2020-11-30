@@ -86,7 +86,7 @@ public class CheckoutController {
 		
 		Parent zoneRoot = zoneLoader.load();
 		Scene zoneScene = new Scene(zoneRoot);
-		
+		zoneScene.getStylesheets().add("application/application.css");
 		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		personnelStage.setScene(zoneScene);
 		personnelStage.show();
@@ -97,6 +97,7 @@ public class CheckoutController {
 		
 		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/Login.fxml"));
 		Scene mainScene = new Scene(mainRoot);
+		mainScene.getStylesheets().add("application/application.css");
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);
 		mainStage.show();

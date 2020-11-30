@@ -6,7 +6,7 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminLoginController">
+<AnchorPane id="background" minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.AdminLoginController">
    <children>
       <Label layoutX="312.0" layoutY="154.0" prefHeight="40.0" prefWidth="178.0" text="Admin Login" textAlignment="CENTER">
          <font>
@@ -28,12 +28,12 @@
             <Font size="18.0" />
          </font>
       </Label>
-      <Button fx:id="userLogin" layoutX="301.0" layoutY="493.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="25.0" prefWidth="200.0" text="Login">
+      <Button fx:id="userLogin" layoutX="301.0" layoutY="493.0" mnemonicParsing="false" onAction="#adminLogin" prefHeight="25.0" prefWidth="200.0" styleClass=".custom-button" text="Login">
          <font>
             <Font size="20.0" />
          </font>
       </Button>
-      <Button fx:id="newUser" layoutX="300.0" layoutY="549.0" mnemonicParsing="false" onAction="#returnToCheckout" prefHeight="25.0" prefWidth="200.0" text="Back">
+      <Button fx:id="newUser" layoutX="300.0" layoutY="549.0" mnemonicParsing="false" onAction="#returnToCheckout" prefHeight="25.0" prefWidth="200.0" styleClass=".custom-button" text="Back">
          <font>
             <Font size="21.0" />
          </font>

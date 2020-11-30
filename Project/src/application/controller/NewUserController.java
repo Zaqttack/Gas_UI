@@ -23,6 +23,7 @@ public class NewUserController {
 		
 		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/Login.fxml"));
 		Scene mainScene = new Scene(mainRoot);
+		mainScene.getStylesheets().add("application/application.css");
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);
 		mainStage.show();
@@ -36,7 +37,7 @@ public class NewUserController {
 		
 		Parent loginRoot = loginLoader.load();
 		Scene loginScene = new Scene(loginRoot);
-		
+		loginScene.getStylesheets().add("application/application.css");
 		Stage loginStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		loginStage.setScene(loginScene);
 		loginStage.show();

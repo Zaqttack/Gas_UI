@@ -6,19 +6,19 @@
 <?import javafx.scene.layout.*?>
 <?import javafx.scene.layout.AnchorPane?>
 
-<AnchorPane minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CheckoutController">
+<AnchorPane id="background" minHeight="800.0" minWidth="800.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1" fx:controller="application.controller.CheckoutController">
    <children>
-      <Label layoutX="22.0" layoutY="38.0" prefHeight="26.0" prefWidth="115.0" text="Checkout">
+      <Label layoutX="22.0" layoutY="38.0" prefHeight="26.0" prefWidth="115.0" styleClass="title-text" text="Checkout">
          <font>
             <Font size="24.0" />
          </font>
       </Label>
-      <Label layoutX="22.0" layoutY="116.0" prefHeight="26.0" prefWidth="124.0" text="List of Items: ">
+      <Label layoutX="18.0" layoutY="152.0" prefHeight="26.0" prefWidth="124.0" text="List of Items: ">
          <font>
             <Font size="18.0" />
          </font>
       </Label>
-      <ListView fx:id="listOfItemsView" layoutX="18.0" layoutY="144.0" prefHeight="485.0" prefWidth="230.0" />
+      <ListView fx:id="listOfItemsView" layoutX="18.0" layoutY="188.0" prefHeight="441.0" prefWidth="230.0" />
       <Label layoutX="84.0" layoutY="654.0" text="Tax:">
          <font>
             <Font size="18.0" />
@@ -40,15 +40,15 @@
          </font>
       </Label>
       <Separator layoutX="259.0" layoutY="3.0" orientation="VERTICAL" prefHeight="800.0" prefWidth="0.0" />
-      <Button fx:id="adminPanelButton" layoutX="511.0" layoutY="33.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="25.0" prefWidth="100.0" text="Admin">
+      <Button fx:id="adminPanelButton" layoutX="511.0" layoutY="33.0" mnemonicParsing="false" onAction="#loginAdmin" prefHeight="25.0" prefWidth="100.0" styleClass=".custom-button" text="Admin">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="25.0" prefWidth="100.0" text="Log off">
+      <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToHome" prefHeight="25.0" prefWidth="100.0" styleClass=".custom-button" text="Log off">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <ListView fx:id="listOfItemsSearch" layoutX="290.0" layoutY="144.0" prefHeight="485.0" prefWidth="437.0" />
+      <ListView fx:id="listOfItemsSearch" layoutX="290.0" layoutY="188.0" prefHeight="441.0" prefWidth="437.0" />
       <Label layoutX="290.0" layoutY="662.0" text="ID #">
          <font>
             <Font size="24.0" />
@@ -67,11 +67,11 @@
          <font>
             <Font size="18.0" />
          </font></TextField>
-      <Button fx:id="addButton" layoutX="630.0" layoutY="695.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="100.0" text="Add">
+      <Button fx:id="addButton" layoutX="630.0" layoutY="695.0" mnemonicParsing="false" onAction="#addItem" prefHeight="25.0" prefWidth="100.0" styleClass=".custom-button" text="Add">
          <font>
             <Font size="18.0" />
          </font></Button>
-      <Button fx:id="completeButton" layoutX="290.0" layoutY="745.0" mnemonicParsing="false" onAction="#completeTransaction" prefHeight="25.0" prefWidth="437.0" text="CHECKOUT">
+      <Button fx:id="completeButton" layoutX="290.0" layoutY="745.0" mnemonicParsing="false" onAction="#completeTransaction" prefHeight="25.0" prefWidth="437.0" styleClass=".custom-button" text="CHECKOUT">
          <font>
             <Font size="18.0" />
          </font>

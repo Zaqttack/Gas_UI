@@ -105,6 +105,7 @@ public class AdministrationController {
 		
 		Parent mainRoot = FXMLLoader.load(getClass().getResource("/application/view/AdminLogin.fxml"));
 		Scene mainScene = new Scene(mainRoot);
+		mainScene.getStylesheets().add("application/application.css");
 		Stage mainStage = (Stage)((Node)event.getSource()).getScene().getWindow();
 		mainStage.setScene(mainScene);
 		mainStage.show();

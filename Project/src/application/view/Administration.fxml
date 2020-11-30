@@ -10,12 +10,12 @@
    <children>
   <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="800.0" prefWidth="800.0">
          <children>
-            <Label layoutX="313.0" layoutY="39.0" prefHeight="24.0" prefWidth="165.0" text="ADMIN INVENTORY">
+            <Label layoutX="313.0" layoutY="39.0" prefHeight="24.0" prefWidth="165.0" styleClass="title-text" text="ADMIN INVENTORY">
                <font>
                   <Font size="18.0" />
                </font>
             </Label>
-            <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToAdminLogin" prefHeight="25.0" prefWidth="100.0" text="Log off">
+            <Button fx:id="logOffButton" layoutX="627.0" layoutY="33.0" mnemonicParsing="false" onAction="#returnToAdminLogin" prefHeight="25.0" prefWidth="100.0" styleClass=".custom-button" text="Log off">
                <font>
                   <Font size="18.0" />
                </font>
@@ -139,7 +139,7 @@
                   <Font size="18.0" />
                </font>
             </RadioButton>
-            <Button fx:id="buyButton" layoutX="630.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyItem" prefHeight="100.0" prefWidth="100.0" text="Add">
+            <Button fx:id="buyButton" layoutX="630.0" layoutY="655.0" mnemonicParsing="false" onAction="#buyItem" prefHeight="100.0" prefWidth="100.0" styleClass=".custom-button" text="Add">
                <font>
                   <Font size="18.0" />
                </font>

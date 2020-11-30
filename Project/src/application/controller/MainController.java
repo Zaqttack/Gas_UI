@@ -38,7 +38,7 @@ public class MainController {
 				
 				Parent checkoutRoot = checkoutLoader.load();
 				Scene checkoutScene = new Scene(checkoutRoot);
-				
+				checkoutScene.getStylesheets().add("application/application.css");
 				CheckoutController controller = checkoutLoader.getController();
 				controller.initializeCheckout();
 				
@@ -52,7 +52,7 @@ public class MainController {
 				
 				Parent checkoutRoot = checkoutLoader.load();
 				Scene checkoutScene = new Scene(checkoutRoot);
-				
+				checkoutScene.getStylesheets().add("application/application.css");
 				CheckoutController controller = checkoutLoader.getController();
 				controller.initializeCheckout();
 				
@@ -75,8 +75,8 @@ public class MainController {
 		
 		Parent registerRoot = registerLoader.load();
 		Scene registerScene = new Scene(registerRoot);
-		
 		Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+		registerScene.getStylesheets().add("application/application.css");
 		personnelStage.setScene(registerScene);
 		personnelStage.show();
 		

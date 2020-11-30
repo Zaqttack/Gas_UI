@@ -43,7 +43,7 @@ public class AdminLoginController {
 				
 				Parent checkoutRoot = checkoutLoader.load();
 				Scene checkoutScene = new Scene(checkoutRoot);
-				
+				checkoutScene.getStylesheets().add("application/application.css");
 				AdministrationController controller = checkoutLoader.getController();
 				controller.initializeAdministration();
 				
@@ -68,7 +68,7 @@ public class AdminLoginController {
 		
 		Parent checkoutRoot = checkoutLoader.load();
 		Scene checkoutScene = new Scene(checkoutRoot);
-		
+		checkoutScene.getStylesheets().add("application/application.css");
 		CheckoutController controller = checkoutLoader.getController();
 		controller.initializeCheckout();
 		
