@@ -6,7 +6,7 @@ Fall 2020 Applications Programming Group Project
 ### User Logins
 Usernames | Passwords
 ----------|-----------
-zaqHolland | password
+zaqHolland | its-me-your-password
 jonny50 | !L3tsg0^.^
 
 ### Admin Logins

@@ -32,7 +32,21 @@ public class MainController {
 		String pass = userPassword.getText();
 		
 		if(name != null && !name.isEmpty() || pass != null && !pass.isEmpty()) {
-			if(userName.getText().equals("zaqHolland") && userPassword.getText().equals("password")) {
+			if(userName.getText().equals("zaqHolland") && userPassword.getText().equals("its-me-your-password")) {
+				FXMLLoader checkoutLoader = new FXMLLoader();
+				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
+				
+				Parent checkoutRoot = checkoutLoader.load();
+				Scene checkoutScene = new Scene(checkoutRoot);
+				
+				CheckoutController controller = checkoutLoader.getController();
+				controller.initializeCheckout();
+				
+				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+				personnelStage.setScene(checkoutScene);
+				personnelStage.show();
+			}
+			if(userName.getText().equals("jonny50") && userPassword.getText().equals("!L3tsg0^.^")) {
 				FXMLLoader checkoutLoader = new FXMLLoader();
 				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
 				
