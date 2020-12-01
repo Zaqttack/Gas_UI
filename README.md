@@ -16,6 +16,9 @@ admin | password123
 
 
 # Our Links
-###Zaquariah - https://www.linkedin.com/in/zaquariah-holland/
-###Joshua - https://www.linkedin.com/in/joshom/
-###Jonathan - https://www.linkedin.com/in/jonathan-mejia-7703b4128
+
+### Zaquariah - https://www.linkedin.com/in/zaquariah-holland/
+
+### Joshua - https://www.linkedin.com/in/joshom/
+
+### Jonathan - https://www.linkedin.com/in/jonathan-mejia-7703b4128
