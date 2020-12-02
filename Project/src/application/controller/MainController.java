@@ -2,6 +2,7 @@ package application.controller;
 
 import java.io.IOException;
 
+import application.model.User;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -30,42 +31,63 @@ public class MainController {
 	public void logUserIn(ActionEvent event)throws IOException {
 		String name = userName.getText();
 		String pass = userPassword.getText();
+		Boolean isUser = false;
 		
-		if(name != null && !name.isEmpty() || pass != null && !pass.isEmpty()) {
-			if(userName.getText().equals("zaqHolland") && userPassword.getText().equals("its-me-your-password")) {
-				FXMLLoader checkoutLoader = new FXMLLoader();
-				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
-				
-				Parent checkoutRoot = checkoutLoader.load();
-				Scene checkoutScene = new Scene(checkoutRoot);
-				checkoutScene.getStylesheets().add("application/application.css");
-				CheckoutController controller = checkoutLoader.getController();
-				controller.initializeCheckout();
-				
-				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-				personnelStage.setScene(checkoutScene);
-				personnelStage.show();
-			}
-			if(userName.getText().equals("jonny50") && userPassword.getText().equals("!L3tsg0^.^")) {
-				FXMLLoader checkoutLoader = new FXMLLoader();
-				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
-				
-				Parent checkoutRoot = checkoutLoader.load();
-				Scene checkoutScene = new Scene(checkoutRoot);
-				checkoutScene.getStylesheets().add("application/application.css");
-				CheckoutController controller = checkoutLoader.getController();
-				controller.initializeCheckout();
-				
-				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
-				personnelStage.setScene(checkoutScene);
-				personnelStage.show();
-			} else {
-				updateLabel.setText("Incorrect Infromation");
-			}
+		User u = new User(name, pass);
+		isUser = u.validate(name, pass);
+		
+		if( isUser == true ) {
+			FXMLLoader checkoutLoader = new FXMLLoader();
+			checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
 			
+			Parent checkoutRoot = checkoutLoader.load();
+			Scene checkoutScene = new Scene(checkoutRoot);
+			checkoutScene.getStylesheets().add("application/application.css");
+			CheckoutController controller = checkoutLoader.getController();
+			controller.initializeCheckout();
+			
+			Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+			personnelStage.setScene(checkoutScene);
+			personnelStage.show();
 		} else {
-			updateLabel.setText("Incorrect Infromation");
+			updateLabel.setText("Incorrect Information");
 		}
+		
+//		if(name != null && !name.isEmpty() || pass != null && !pass.isEmpty()) {
+//			if(userName.getText().equals("zaqHolland") && userPassword.getText().equals("its-me-your-password")) {
+//				FXMLLoader checkoutLoader = new FXMLLoader();
+//				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
+//				
+//				Parent checkoutRoot = checkoutLoader.load();
+//				Scene checkoutScene = new Scene(checkoutRoot);
+//				checkoutScene.getStylesheets().add("application/application.css");
+//				CheckoutController controller = checkoutLoader.getController();
+//				controller.initializeCheckout();
+//				
+//				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//				personnelStage.setScene(checkoutScene);
+//				personnelStage.show();
+//			}
+//			if(userName.getText().equals("jonny50") && userPassword.getText().equals("!L3tsg0^.^")) {
+//				FXMLLoader checkoutLoader = new FXMLLoader();
+//				checkoutLoader.setLocation(getClass().getResource("/application/view/Checkout.fxml"));
+//				
+//				Parent checkoutRoot = checkoutLoader.load();
+//				Scene checkoutScene = new Scene(checkoutRoot);
+//				checkoutScene.getStylesheets().add("application/application.css");
+//				CheckoutController controller = checkoutLoader.getController();
+//				controller.initializeCheckout();
+//				
+//				Stage personnelStage = (Stage)((Node)event.getSource()).getScene().getWindow();
+//				personnelStage.setScene(checkoutScene);
+//				personnelStage.show();
+//			} else {
+//				updateLabel.setText("Incorrect Infromation");
+//			}
+//			
+//		} else {
+//			updateLabel.setText("Incorrect Infromation");
+//		}
 	}
 	
 	public void registerNewUser(ActionEvent event)throws IOException {
