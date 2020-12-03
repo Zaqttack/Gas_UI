@@ -14,6 +14,18 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+
+/**
+ * AdminLoginController is a class that controls the interactions on the admin login page
+ * 
+ * @author Jonathan Mejia
+ * @author Zaquariah Holland
+ * @author Joshua Oliveira-Martin
+ * 
+ * UTSA CS 3443 - Team Project
+ * Fall 2020
+ *
+ */
 public class AdminLoginController {
 
     @FXML
@@ -30,7 +42,12 @@ public class AdminLoginController {
 
     @FXML
     private TextField userName;
-
+    
+    /**
+     * handles the user inputed text form boxes and verifies match with admin passwords 
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void adminLogin(ActionEvent event) throws IOException {
 		String name = userName.getText();
@@ -59,7 +76,11 @@ public class AdminLoginController {
 		}
 
     }
-
+    /**
+     * handles the button click to return the user from adminlogin back to user checkout page
+     * @param event
+     * @throws IOException
+     */
     @FXML
     void returnToCheckout(ActionEvent event) throws IOException {
     	

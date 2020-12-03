@@ -9,7 +9,7 @@ import javafx.scene.Scene;
 import javafx.scene.image.Image;
 
 /**
- * 
+ * GAS_UI is a program for managing convience store sales with a user checkout.
  * @author Jonathan Mejia
  * @author Zaquariah Holland
  * @author Joshua Oliveira-Martin

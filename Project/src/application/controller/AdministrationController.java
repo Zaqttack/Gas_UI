@@ -1,7 +1,16 @@
 package application.controller;
 /**
- * @author Rube
+ * AdminController is a class that controls the interactions on the admin page
+ * 
+ * @author Jonathan Mejia
+ * @author Zaquariah Holland
+ * @author Joshua Oliveira-Martin
+ * 
+ * UTSA CS 3443 - Team Project
+ * Fall 2020
+ *
  */
+ 
 import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.util.List;
@@ -66,13 +75,19 @@ public class AdministrationController {
     private Button buyButton;
     @FXML
     private Label boughtLabel;
-
+    /**	
+     * loads the data into the admin user from the data CSV files
+     * @throws FileNotFoundException
+     */
 	public AdministrationController() throws FileNotFoundException {
 		admin.LoadProducts("data/products.csv");
 		admin.LoadSales("data/sales.csv");
 		store.LoadMerchandise("data/merchandise.csv");
 	}
-    
+    /**
+     * Initializes all the data on the admin page
+     * 
+     */
     public void initializeAdministration() {
     	int i = 0;
     	totalItems = 0;
@@ -99,7 +114,11 @@ public class AdministrationController {
 			productListView.getItems().add(i, productStuff);
 		}
     }
-
+	/**
+	 * handles a mouse click resolved onto a button to return to admin login screen
+	 * @param event
+	 * @throws IOException
+	 */
     @FXML
     void returnToAdminLogin(ActionEvent event) throws IOException {
 		
@@ -110,7 +129,11 @@ public class AdministrationController {
 		mainStage.setScene(mainScene);
 		mainStage.show();
     }
-
+    /**
+     * the admin can purchace and add items to inventory with the proposed markup from item ID (on click of button pulls info)
+     * @param event
+     * @throws FileNotFoundException
+     */
     @FXML
     void buyItem(ActionEvent event) throws FileNotFoundException {
     	String ID = buyID.getText();

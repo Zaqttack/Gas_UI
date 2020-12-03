@@ -15,6 +15,17 @@ import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
 import javafx.stage.Stage;
 
+/**
+ * AdminController is a class that controls the interactions on the admin page
+ * 
+ * @author Jonathan Mejia
+ * @author Zaquariah Holland
+ * @author Joshua Oliveira-Martin
+ * 
+ * UTSA CS 3443 - Team Project
+ * Fall 2020
+ *
+ */
 public class NewUserController {
 
     @FXML
@@ -35,6 +46,11 @@ public class NewUserController {
     @FXML
     private Label updateLabel;
     
+    /**
+     * handles button click to pull inputted fields and create a user
+     * @param event
+     * @throws IOException
+     */
 	public void createNewUser(MouseEvent event) throws IOException {
     	String newUserName = userName.getText();
     	String newUserPass = userPass.getText();
@@ -59,7 +75,11 @@ public class NewUserController {
 		}
 		
 	}
-
+	/**
+	 * resolves a button click to return to user login screen "main" 
+	 * @param event
+	 * @throws IOException
+	 */
 	public void setMainScene(MouseEvent event)throws IOException {
 		
 		FXMLLoader loginLoader = new FXMLLoader();

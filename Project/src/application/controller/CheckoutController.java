@@ -22,6 +22,17 @@ import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 import javafx.util.Duration;
 
+/**
+ * checkoutController is a class that controls the interactions on the checkout page
+ * 
+ * @author Jonathan Mejia
+ * @author Zaquariah Holland
+ * @author Joshua Oliveira-Martin
+ * 
+ * UTSA CS 3443 - Team Project
+ * Fall 2020
+ *
+ */
 public class CheckoutController {
 	public StoreFront s = new StoreFront("Gas_UI");
 	List<Merchandise> merch = s.getItems();
@@ -52,11 +63,17 @@ public class CheckoutController {
     private ListView<String> listOfItemsSearch;
     @FXML
     private Button completeButton;
-
+    
+    /**
+     * handles loading of data from the merchandise CSV
+     * @throws FileNotFoundException
+     */
 	public CheckoutController() throws FileNotFoundException {
 		s.LoadMerchandise("data/merchandise.csv");
 	}
-	
+	/**
+	 * calculation to add up the "cart" and produce a  checkout view string
+	 */
 	public void initializeCheckout() {
 		cost = 0;
 		totalTax = 0;
@@ -68,7 +85,9 @@ public class CheckoutController {
 			listOfItemsSearch.getItems().add(i, merchandiseStuff);
 		}
 	}
-	
+	/**
+	 * string cat: to repopulate the list within merchandise
+	 */
 	public void repopulateMerchandise() {
 		
 		String merchandiseStuff;
@@ -77,7 +96,11 @@ public class CheckoutController {
 			listOfItemsSearch.getItems().add(i, merchandiseStuff);
 		}
 	}
-
+	/**
+	 * resolves a button click to change the view to adminLogin screen
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
     void loginAdmin(ActionEvent event) throws IOException {
 		
@@ -91,7 +114,12 @@ public class CheckoutController {
 		personnelStage.setScene(zoneScene);
 		personnelStage.show();
     }
-
+	
+	/**
+	 * resolves a button click to return the user to a login screen
+	 * @param event
+	 * @throws IOException
+	 */
 	@FXML
     void returnToHome(ActionEvent event) throws IOException {
 		
@@ -102,7 +130,11 @@ public class CheckoutController {
 		mainStage.setScene(mainScene);
 		mainStage.show();
     }
-
+	/**
+	 * resolves a button click to get the item ID and add it to the "cart" list
+	 * @param event
+	 * @throws FileNotFoundException
+	 */
 	@FXML
     void addItem(ActionEvent event) throws FileNotFoundException {
 		String ID = addID.getText();
@@ -158,7 +190,11 @@ public class CheckoutController {
 			}
 		}
     }
-	
+	/**
+	 * resolves a button click to complete the checkout and show transation complete
+	 * @param event
+	 * @throws InterruptedException
+	 */
     @FXML
     void completeTransaction(ActionEvent event) throws InterruptedException {
     	

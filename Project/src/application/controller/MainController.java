@@ -15,6 +15,17 @@ import javafx.scene.control.PasswordField;
 import javafx.scene.control.TextField;
 import javafx.stage.Stage;
 
+/**
+ * MainController is a class that controls the interactions on the main login page
+ * 
+ * @author Jonathan Mejia
+ * @author Zaquariah Holland
+ * @author Joshua Oliveira-Martin
+ * 
+ * UTSA CS 3443 - Team Project
+ * Fall 2020
+ *
+ */
 public class MainController {
 
     @FXML
@@ -27,7 +38,12 @@ public class MainController {
     private Button newUser;
     @FXML
     private TextField userName;
-
+    
+    /**
+     * resolves a button click to handle a user login from the inputted information
+     * @param event
+     * @throws IOException
+     */
 	public void logUserIn(ActionEvent event)throws IOException {
 		String name = userName.getText();
 		String pass = userPassword.getText();
@@ -54,6 +70,11 @@ public class MainController {
 		}
 	}
 	
+	/**
+	 * handles button click to change views from login page to register user page
+	 * @param event
+	 * @throws IOException
+	 */
 	public void registerNewUser(ActionEvent event)throws IOException {
 		
 		FXMLLoader registerLoader = new FXMLLoader();
